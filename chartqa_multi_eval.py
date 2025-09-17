@@ -60,7 +60,7 @@ def encode_pil_to_base64_png(img: Image.Image) -> str:
 # ------------------------------- GPT‑4o ---------------------------------- #
 
 from openai import OpenAI, APIError, RateLimitError
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "Your OpenAI API Key"
 openai_client = OpenAI()  # uses OPENAI_API_KEY
 
 def ask_gpt4o(img: Image.Image, q: str, model="gpt-4o"):
@@ -90,7 +90,7 @@ import google.generativeai as genai
 from google.api_core.exceptions import ResourceExhausted
 
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyB1mS5FiJfnMN7wKohiVux832VzE57ffEQ"
+os.environ["GOOGLE_API_KEY"] = "Your Google API Key"
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 gemini_model = genai.GenerativeModel("gemini-1.5-pro")
@@ -234,3 +234,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     evaluate(args.n, args.split, args.csv)
+
